@@ -5,24 +5,17 @@ import constants.Constants;
 public class Check {
 
 	// フィールド
-    private String firstName;
-	private String lastName;
-
-    // コンストラクタ
-    public Check() {
-    	this.firstName = "大橋";
-    	this.lastName  = "一夫";
-    }
+	private static String firstName = "大橋";
+	private static String lastName = "一夫";
 
     // メソッド
-    public void printName() {
-        System.out.println("printNameメソッド　→　" + this.firstName + this.lastName);
+    private static void printName( String firstName, String lastName) {
+        System.out.println("printNameメソッド　→　" + firstName + lastName);
     }
 
 	public static void main(String args[]) {
 		//課題①・課題②
-		Check check = new Check();
-		check.printName();
+		printName( firstName, lastName);
 
 		//課題③
 		Pet pet = new Pet( Constants.CHECK_CLASS_JAVA, Constants.CHECK_CLASS_HOGE);
