@@ -31,6 +31,11 @@ public class Study {
         // getメソッドで対応してしまうと、あくまで「月の値 + 1」であるため、
         //繰り上げや繰り下げ時において「13月、14月、15月」という表示になってしまいますし、
         //年の加算減算はしてくれません。
+        //またカレンダークラスで定義されている Calendar.MONTH は
+        //JANUARY(実値=0)〜UNDECIMBER(実値=11) まで定義が存在し、
+        //実際の月の値は、「-1」の値を保持しているため、
+        //「+1」することで実際に表示される月の値を調整する。
+
         System.out.println(calendar.get(Calendar.YEAR));
         System.out.println(calendar.get(Calendar.MONTH) + 1);
         System.out.println(calendar.get(Calendar.DATE));
@@ -44,7 +49,7 @@ public class Study {
         calendar.add(Calendar.MONTH, 2);
         calendar.add(Calendar.DATE, 15);
         System.out.println(calendar.get(Calendar.YEAR));
-        System.out.println(calendar.get(Calendar.MONTH));
+        System.out.println(calendar.get(Calendar.MONTH)+1);
         System.out.println(calendar.get(Calendar.DATE));
 
         // うるう年判定
